@@ -1,6 +1,6 @@
 var _ = require("underscore"),
   child_process = require("child_process"),
-  iconv = require("iconv-lit")
+  iconv = require("iconv-lite")
 
 function init(path) {
   var obj = new R(path);
