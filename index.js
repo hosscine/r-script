@@ -1,5 +1,6 @@
 var _ = require("underscore"),
-  child_process = require("child_process");
+  child_process = require("child_process"),
+  iconv = require("iconv-lit")
 
 function init(path) {
   var obj = new R(path);
@@ -40,6 +41,7 @@ class R {
     var opts = _opts || {};
     this.options.env.input = JSON.stringify([this.d, this.path, opts]);
     var child = child_process.spawnSync("Rscript", this.args, this.options);
+    console.log(iconv.decode(child.stdout, "Shift_JIS"))
     if (child.stderr) throw child.stderr;
     return (JSON.parse(child.stdout));
   };
