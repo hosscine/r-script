@@ -2,11 +2,11 @@ var _ = require("underscore"),
   child_process = require("child_process");
 
 function init(path) {
-  var obj = new r(path);
+  var obj = new R(path);
   return obj;
 }
 
-class r {
+class R {
   constructor(path) {
     this.d = {};
     this.path = path;
